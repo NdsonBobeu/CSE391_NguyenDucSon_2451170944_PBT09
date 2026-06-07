@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>📋 Form Validator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="card">
+      <h1>📋 Đăng ký tài khoản</h1>
+      <p class="subtitle">Vui lòng điền đầy đủ thông tin bên dưới</p>
+
+      <!-- KHÔNG dùng thẻ <form> để submit kiểu truyền thống nếu muốn 100% JS -->
+      <!-- Ở đây vẫn dùng form + preventDefault cho đúng chuẩn bài -->
+      <form id="registerForm" novalidate>
+
+        <!-- Tên -->
+        <div class="field" id="field-name">
+          <label for="inputName">Họ và tên</label>
+          <div class="input-wrapper">
+            <input id="inputName" type="text" placeholder="Nguyễn Văn A" />
+            <span class="icon"></span>
+          </div>
+          <p class="error-msg"></p>
+        </div>
+
+        <!-- Email -->
+        <div class="field" id="field-email">
+          <label for="inputEmail">Email</label>
+          <div class="input-wrapper">
+            <input id="inputEmail" type="email" placeholder="example@gmail.com" />
+            <span class="icon"></span>
+          </div>
+          <p class="error-msg"></p>
+        </div>
+
+        <!-- Password -->
+        <div class="field" id="field-password">
+          <label for="inputPassword">Mật khẩu</label>
+          <div class="input-wrapper">
+            <input id="inputPassword" type="password" placeholder="Tối thiểu 8 ký tự" />
+            <span class="icon"></span>
+          </div>
+          <!-- Thanh strength -->
+          <div class="strength-bar">
+            <div class="strength-fill" id="strengthFill"></div>
+          </div>
+          <p class="strength-label" id="strengthLabel"></p>
+          <p class="error-msg"></p>
+        </div>
+
+        <!-- Confirm password -->
+        <div class="field" id="field-confirm">
+          <label for="inputConfirm">Xác nhận mật khẩu</label>
+          <div class="input-wrapper">
+            <input id="inputConfirm" type="password" placeholder="Nhập lại mật khẩu" />
+            <span class="icon"></span>
+          </div>
+          <p class="error-msg"></p>
+        </div>
+
+        <!-- Số điện thoại -->
+        <div class="field" id="field-phone">
+          <label for="inputPhone">Số điện thoại</label>
+          <div class="input-wrapper">
+            <input id="inputPhone" type="tel" placeholder="0901-234-567" maxlength="12" />
+            <span class="icon"></span>
+          </div>
+          <p class="error-msg"></p>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" id="submitBtn" disabled>Đăng ký</button>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal thành công -->
+  <div id="successModal" class="modal hidden">
+    <div class="modal-overlay"></div>
+    <div class="modal-box">
+      <div class="success-icon">🎉</div>
+      <h2>Đăng ký thành công!</h2>
+      <div class="user-info" id="userInfo">
+        <!-- Thông tin sẽ được JS điền vào -->
+      </div>
+      <button id="modalCloseBtn">Đóng</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

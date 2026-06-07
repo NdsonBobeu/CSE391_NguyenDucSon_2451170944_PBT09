@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>⌨️ Keyboard App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ======== HEADER ======== -->
+  <header class="app-header">
+    <h1>⌨️ Keyboard App</h1>
+    <div class="shortcuts-hint">
+      <span>← → Chuyển ảnh</span>
+      <span>Space Slideshow</span>
+      <span>1-9 Nhảy ảnh</span>
+      <span>Esc Đóng modal</span>
+      <span>Ctrl+K Command Palette</span>
+    </div>
+  </header>
+
+  <!-- ======== GALLERY ======== -->
+  <section class="gallery-section" aria-label="Bộ sưu tập ảnh">
+    <div class="gallery-controls" role="toolbar" aria-label="Điều khiển gallery">
+      <button id="prevBtn" aria-label="Ảnh trước (phím ←)">◀ Trước</button>
+      <span id="slideCounter" aria-live="polite">1 / 9</span>
+      <button id="nextBtn" aria-label="Ảnh tiếp (phím →)">Tiếp ▶</button>
+      <button id="playBtn" aria-label="Phát slideshow (phím Space)" class="play-btn">▶ Play</button>
+    </div>
+
+    <!-- Khung ảnh chính -->
+    <div class="gallery-frame" id="galleryFrame" tabindex="0" aria-label="Ảnh hiện tại">
+      <img id="galleryImg" src="" alt="" />
+      <div class="gallery-caption" id="galleryCaption"></div>
+    </div>
+
+    <!-- Thumbnails -->
+    <div class="thumbnails" id="thumbnails" role="list" aria-label="Danh sách ảnh">
+      <!-- Tạo bằng JS -->
+    </div>
+  </section>
+
+  <!-- ======== MODAL ẢNH LỚN ======== -->
+  <div id="imageModal" class="modal hidden" role="dialog" aria-modal="true" aria-label="Ảnh phóng to">
+    <div class="modal-overlay" id="imgModalOverlay"></div>
+    <div class="modal-img-box">
+      <img id="modalImg" src="" alt="" />
+      <button class="modal-close-btn" id="imgModalClose" aria-label="Đóng (Escape)">✕</button>
+    </div>
+  </div>
+
+  <!-- ======== COMMAND PALETTE ======== -->
+  <div id="commandPalette" class="command-palette hidden" role="dialog" aria-modal="true" aria-label="Command palette">
+    <div class="cp-overlay" id="cpOverlay"></div>
+    <div class="cp-box">
+      <div class="cp-search-row">
+        <span class="cp-icon">⌘</span>
+        <input
+          id="cpInput"
+          type="text"
+          placeholder="Tìm lệnh... (vd: dark, prev, play)"
+          autocomplete="off"
+          aria-label="Nhập lệnh"
+        />
+      </div>
+      <ul id="cpResults" class="cp-results" role="listbox" aria-label="Kết quả">
+        <!-- Tạo bằng JS -->
+      </ul>
+      <p class="cp-footer">Enter để chọn · Esc để đóng</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

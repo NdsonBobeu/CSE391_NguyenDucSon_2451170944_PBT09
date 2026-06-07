@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🛍️ Product Catalog</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <h1>🛍️ Shop<span>Zone</span></h1>
+      <div class="header-actions">
+        <button id="darkModeBtn" title="Toggle dark mode">🌙</button>
+        <div class="cart-wrapper">
+          <button id="cartBtn">🛒</button>
+          <span id="cartBadge" class="cart-badge hidden">0</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Toolbar: search + sort -->
+  <div class="toolbar">
+    <input id="searchInput" type="text" placeholder="🔍  Tìm sản phẩm..." />
+    <select id="sortSelect">
+      <option value="default">Sắp xếp</option>
+      <option value="price-asc">Giá tăng dần</option>
+      <option value="price-desc">Giá giảm dần</option>
+      <option value="name-az">Tên A → Z</option>
+      <option value="rating-desc">Đánh giá cao nhất</option>
+    </select>
+  </div>
+
+  <!-- Category filters -->
+  <div class="category-bar" id="categoryBar">
+    <!-- Các nút category được tạo bằng JS -->
+  </div>
+
+  <!-- Product grid -->
+  <main class="product-grid" id="productGrid">
+    <!-- Các card sản phẩm được tạo bằng JS -->
+  </main>
+
+  <!-- Modal chi tiết sản phẩm (tạo bằng JS, ban đầu ẩn) -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal-box" id="modalBox">
+      <!-- Nội dung được JS điền vào -->
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
